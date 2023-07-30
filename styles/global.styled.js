@@ -14,5 +14,5 @@ export const Primary = styled.button`
   color: white;
   font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
