@@ -47,18 +47,15 @@ export default function Question() {
 
   const onSubmit = async () => {
     if (disabled) return;
-    const timeTaken = (Date.now() - startTime) / 1000;
     const newUserResponse = [...userResponse];
     newUserResponse.push({
       questionNo,
       chosenAnswerForServer: chosenAnswer,
-      timeTaken,
     });
     try {
       await axios.post(`api/${quizId}/questions`, {
         questionNo,
         chosenAnswerForServer: chosenAnswer,
-        timeTaken,
       });
     } catch (err) {
       console.log(err.message);
