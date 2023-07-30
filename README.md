@@ -2,6 +2,8 @@
 
 Simple quiz app built for a take home assignment.
 
+Demo: [https://quizzy-alpha.vercel.app](https://quizzyyy.vercel.app/report)
+
 ## How to run locally?
 
 - Clone the repository.
