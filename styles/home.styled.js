@@ -4,7 +4,7 @@ export const Root = styled.div`
   max-width: 380px;
   height: 100%;
   margin: auto;
-  border: 1px solid black;
+  border: 0.5px solid black;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -15,10 +15,11 @@ export const Root = styled.div`
 
 export const GradientBackground = styled.div`
   background: linear-gradient(
-    180deg,
-    rgba(175, 156, 243, 0) 7.92%,
-    #af9cf3 86.48%
-  );
+      180deg,
+      rgba(175, 156, 243, 0) 7.92%,
+      #3cefff 86.48%
+    ),
+    white;
   height: 100%;
 `;
 

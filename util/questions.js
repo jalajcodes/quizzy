@@ -3,36 +3,36 @@ export const questions = [
     question: "Which team was the 2015-2016 NBA Champions?",
     options: [
       "Golden State Warriors",
-      "Cleveland Cavaliers",
       "Toronto Raptors",
+      "Cleveland Cavaliers",
       "Oklahoma City Thunders",
     ],
     correctAnswer: 2,
   },
   {
     question: "What continent is the country Lesotho in?",
-    options: ["Asia", "Africa", "South America", "Europe"],
+    options: ["Asia", "South America", "Africa", "Europe"],
     correctAnswer: 2,
   },
   {
     question:
-      "How do you judge what should be added in the next version of the app?",
+      "In Minecraft, which two items must be combined to craft a torch?",
     options: [
-      "Data Analysis",
-      "User's Feedback",
-      "Make a Questionary",
-      "Personal Feeling",
+      "Stick and Fire",
+      "Wood and Coal",
+      "Stick and Coal",
+      "Wood and Fire",
     ],
     correctAnswer: 2,
   },
   {
     question: "Only one country in the world starts with the letter Q.",
-    options: ["True", "False", "I don't know", "I don't care"],
+    options: ["True", "I don't know", "False", "I don't care"],
     correctAnswer: 2,
   },
   {
     question: "What country has a horizontal bicolor red and white flag?",
-    options: ["Bahrain", "Monaco", "Malta", "Liechenstein"],
+    options: ["Bahrain", "Malta", "Monaco", "Liechenstein"],
     correctAnswer: 2,
   },
 ];
