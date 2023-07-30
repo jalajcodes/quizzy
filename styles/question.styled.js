@@ -28,7 +28,7 @@ export const OptionsContainer = styled.div`
 `;
 
 export const QuestionRoot = styled.div`
-  background: #af9cf3;
+  background: #ff3c3e;
   display: flex;
   flex-direction: column;
   flex: 1;

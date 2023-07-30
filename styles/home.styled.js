@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const Root = styled.div`
   max-width: 380px;
   height: 100%;
+  max-height: 710px;
   margin: auto;
-  border: 0.5px solid black;
   box-sizing: border-box;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  width: 100%;
   overflow: hidden;
+  background-color: white;
+  border-radius: 24px;
 `;
 
 export const GradientBackground = styled.div`
