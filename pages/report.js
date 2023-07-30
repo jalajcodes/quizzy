@@ -17,9 +17,9 @@ export default function Question() {
   const [correctAnswers, setCorrectAnswers] = useState(-1);
 
   useEffect(() => {
-    const correct = questions.filter((ques, index) =>
-      userResponse[index].chosenAnswersForServer.includes(ques.correctAnswer)
-    ).length;
+    const correct = questions.filter((ques, index) => {
+      return userResponse[index].chosenAnswerForServer === ques.correctAnswer;
+    }).length;
     setCorrectAnswers(correct);
   }, [userResponse, questions]);
 

@@ -7,12 +7,12 @@ export const questions = [
       "Cleveland Cavaliers",
       "Oklahoma City Thunders",
     ],
-    correctAnswer: 2,
+    correctAnswer: "Cleveland Cavaliers",
   },
   {
     question: "What continent is the country Lesotho in?",
     options: ["Asia", "South America", "Africa", "Europe"],
-    correctAnswer: 2,
+    correctAnswer: "Africa",
   },
   {
     question:
@@ -23,16 +23,16 @@ export const questions = [
       "Stick and Coal",
       "Wood and Fire",
     ],
-    correctAnswer: 2,
+    correctAnswer: "Stick and Coal",
   },
   {
     question: "Only one country in the world starts with the letter Q.",
     options: ["True", "I don't know", "False", "I don't care"],
-    correctAnswer: 2,
+    correctAnswer: "False",
   },
   {
     question: "What country has a horizontal bicolor red and white flag?",
     options: ["Bahrain", "Malta", "Monaco", "Liechenstein"],
-    correctAnswer: 2,
+    correctAnswer: "Monaco",
   },
 ];

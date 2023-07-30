@@ -25,7 +25,7 @@ export default function Question() {
   const [questionNo, setQuestionNo] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [chosenAnswers, setChosenAnswers] = useState([]);
+  const [chosenAnswer, setChosenAnswer] = useState("");
 
   useEffect(() => {
     if (questions == undefined || questions.length == 0) {
@@ -34,41 +34,30 @@ export default function Question() {
       return;
     }
     setStartTime(Date.now());
-    setChosenAnswers(
-      new Array(questions[questionNo].options.length).fill(false)
-    );
+    setChosenAnswer("");
   }, [questionNo, questions]);
 
   useEffect(() => {
-    setDisabled(!chosenAnswers.some((item) => item));
-  }, [chosenAnswers]);
+    setDisabled(!chosenAnswer);
+  }, [chosenAnswer]);
 
-  const onChange = (position) => {
-    const updatedChosenAnswers = chosenAnswers.map((item, index) =>
-      index === position ? !item : item
-    );
-    setChosenAnswers(updatedChosenAnswers);
+  const onChange = (option) => {
+    setChosenAnswer(option);
   };
 
   const onSubmit = async () => {
     if (disabled) return;
     const timeTaken = (Date.now() - startTime) / 1000;
-    const chosenAnswersForServer = [];
-    chosenAnswers.forEach((el, i) => {
-      if (el) {
-        chosenAnswersForServer.push(i);
-      }
-    });
     const newUserResponse = [...userResponse];
     newUserResponse.push({
       questionNo,
-      chosenAnswersForServer,
+      chosenAnswerForServer: chosenAnswer,
       timeTaken,
     });
     try {
       await axios.post(`api/${quizId}/questions`, {
         questionNo,
-        chosenAnswersForServer,
+        chosenAnswerForServer: chosenAnswer,
         timeTaken,
       });
     } catch (err) {
@@ -93,7 +82,7 @@ export default function Question() {
   if (questions == undefined || questions.length == 0) {
     return <p>Go back to home and start the quiz again please.</p>;
   }
-  
+
   return (
     <QuestionRoot>
       <Image
@@ -127,13 +116,13 @@ export default function Question() {
           <p style={{ fontWeight: "bold", margin: "0" }}>
             {questions[questionNo].question}
           </p>
-          {questions[questionNo].options.map((ques, index) => (
+          {questions[questionNo].options.map((option, index) => (
             <OptionRoot
               key={index}
-              check={chosenAnswers[index]}
-              onClick={() => onChange(index)}
+              check={chosenAnswer === option}
+              onClick={() => onChange(option)}
             >
-              {chosenAnswers[index] ? (
+              {chosenAnswer === option ? (
                 <Image
                   style={{ ...styles.checkStyles, marginLeft: "1rem" }}
                   src={GreenCheck}
@@ -150,7 +139,7 @@ export default function Question() {
                   }}
                 ></span>
               )}
-              <p style={{ marginLeft: "1rem" }}>{ques}</p>
+              <p style={{ marginLeft: "1rem" }}>{option}</p>
             </OptionRoot>
           ))}
           <PrimaryButton
